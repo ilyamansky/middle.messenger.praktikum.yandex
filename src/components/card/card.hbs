@@ -1,0 +1,14 @@
+{{#each cards}}
+  <div class="card">
+    <div>
+      <img src="{{avatarUrl}}" class="avatar-sm" />
+    </div>
+    <div class="message">
+      <div>{{userName}}</div>
+      <div>{{lastMessage}}</div>
+      {{#if isUnreadMessage}}
+        <div class="count">{{count}}</div>
+      {{/if}}
+    </div>
+  </div>
+{{/each}}

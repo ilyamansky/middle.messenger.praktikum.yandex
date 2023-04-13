@@ -1,0 +1,8 @@
+
+.img1 {
+    border-radius: 50%;
+    border: 1px black solid;
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}
