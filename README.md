@@ -1,28 +1,35 @@
-Описание
+**Описание**
 
 
 
 Учебный проект от Яндекса по разработке мессенджера (наподобие телеграма или вотсапа)
 
-Технологии: 
+
+**Технологии:**
 
 JS, Poctcss, Handlebars, Parcel
 
-Деплой
+
+**Деплой**
 
 https://deploy--grand-empanada-06da8f.netlify.app/
 
-Макет 
+
+**Макет**
 
 находится в корневой папке ui
 
-Установка
+
+**Установка**
 
 npm start — установка стабильной версии,
 
 npm build — сборка стабильной версии.
 
-Страницы
+
+
+**Страницы**
+
 
 sign-in page: https://affectionate-heyrovsky-b5e847.netlify.app/signin
 
@@ -38,6 +45,7 @@ change-password page: https://affectionate-heyrovsky-b5e847.netlify.app/password
 
 500 page: https://affectionate-heyrovsky-b5e847.netlify.app/500
 
-Pull requests
+
+**Pull requests**
 
 Sprint 1: #1
