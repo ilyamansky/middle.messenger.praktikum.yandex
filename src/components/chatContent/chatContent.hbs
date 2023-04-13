@@ -1,0 +1,21 @@
+{{#if isChatSelected}}
+  {{#each messages}}
+    {{#if isYourMessage}}
+    <div class="chat-your-message">
+      <div>{{messageHeader}}</div>
+      <div>{{messageBody}}</div>
+      <div>{{messageFooter}}</div>
+    </div>
+    {{/if}}
+    {{#unless isYourMessage}}
+    <div class="chat-message">
+      <div>{{messageHeader}}</div>
+      <div>{{messageBody}}</div>
+      <div>{{messageFooter}}</div>
+    </div>
+    {{/unless}}
+  {{/each}}
+{{/if}}
+{{#else}}
+    <div>{{chatMessage}}</div>
+{{/else}}
