@@ -6,10 +6,11 @@ export const data = {
   formData: {
     inputs: [
       {
-        placeholder: "e-mail",
-        type: "email",
+        placeholder: "login",
+        type: "text",
         isLabel: true,
-        label: "e-mail",
+        label: "login",
+        name: "login",
       },
 
       {
@@ -17,11 +18,13 @@ export const data = {
         type: "password",
         isLabel: true,
         label: "password",
+        name: "password",
       },
     ],
   },
   buttonData: {
     buttonContent: "Sign In",
+    type: "submit",
   },
   footerData: {
     footerContent: "Don't have a profile?",
