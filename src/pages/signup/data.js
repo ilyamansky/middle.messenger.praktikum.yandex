@@ -26,7 +26,7 @@ export const data = {
         type: "email",
         isLabel: true,
         label: "e-mail",
-        name: "e-mail",
+        name: "email",
       },
 
       {
