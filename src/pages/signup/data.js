@@ -10,6 +10,7 @@ export const data = {
         type: "text",
         isLabel: true,
         label: "first name",
+        name: "first_name",
       },
 
       {
@@ -17,6 +18,7 @@ export const data = {
         type: "text",
         isLabel: true,
         label: "last name",
+        name: "second_name",
       },
 
       {
@@ -24,6 +26,7 @@ export const data = {
         type: "email",
         isLabel: true,
         label: "e-mail",
+        name: "e-mail",
       },
 
       {
@@ -31,6 +34,7 @@ export const data = {
         type: "tel",
         isLabel: true,
         label: "phone",
+        name: "phone",
       },
 
       {
@@ -38,6 +42,7 @@ export const data = {
         type: "password",
         isLabel: true,
         label: "password",
+        name: "password",
       },
 
       {
@@ -45,11 +50,13 @@ export const data = {
         type: "password",
         isLabel: true,
         label: "password",
+        name: "password",
       },
     ],
   },
   buttonData: {
     buttonContent: "Sign up",
+    type: "submit",
   },
   footerData: {
     footerContent: "Have a profile?",

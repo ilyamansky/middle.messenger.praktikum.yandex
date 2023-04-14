@@ -10,33 +10,54 @@ export const data = {
   formData: {
     inputs: [
       {
+        placeholder: "chat name",
+        type: "text",
+        isLabel: true,
+        label: "chat name",
+        name: "display_name",
+      },
+
+      {
+        placeholder: "login",
+        type: "text",
+        isLabel: true,
+        label: "login",
+        name: "login",
+      },
+
+      {
         placeholder: "first name",
         type: "text",
         isLabel: true,
-        label: "first name"
+        label: "first name",
+        name: "first_name",
       },
       {
         placeholder: "last name",
         type: "text",
         isLabel: true,
-        label: "last name"
+        label: "last name",
+        name: "second_name",
       },
       {
         placeholder: "e-mail",
         type: "email",
         isLabel: true,
-        label: "e-mail"
+        label: "e-mail",
+        name: "email",
       },
       {
         placeholder: "phone number",
         type: "tel",
         isLabel: true,
-        label: "phone"
+        label: "phone",
+        name: "phone",
       }, 
     ],
   },
   buttonData: {
     buttonContent: "Save changes",
+    type: "submit",
   },
   footerData: {
     footerContent: "Go back to Profile",
