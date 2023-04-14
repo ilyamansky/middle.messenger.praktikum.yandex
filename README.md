@@ -48,4 +48,4 @@ change-password page: https://deploy--grand-empanada-06da8f.netlify.app/password
 
 **Pull requests**
 
-Sprint 1: #2
+Sprint 1: #2 
