@@ -1,0 +1,10 @@
+<form>
+    {{#each inputs}}
+    <div>
+    {{#if isLabel}}
+        <label>{{label}}</label>
+    {{/if}}
+        <input name="{{name}}" placeholder = "{{placeholder}}" type="{{type}}" value="{{value}}" class="{{class}}" />
+        </div>
+    {{/each}}
+</form>

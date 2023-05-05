@@ -1,0 +1,27 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    background-color: #7FFFD4;
+    border-bottom: 1px solid green;
+    padding: 10px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px; 
+
+    & :first-child {
+        font-weight: bold;
+    }
+}
+
+.count {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: green;
+    margin: 0 0 0 auto;
+    contain: content;
+    text-align: center;
+}

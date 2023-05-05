@@ -1,0 +1,89 @@
+@define-mixin form-mixin $name {
+  box-sizing: border-box;
+  margin: 100px auto 0;
+  padding: 20 0 20 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: $form-bg;
+  width: 450px;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
+  gap: 15px;
+
+  & header {
+    color: $color-green;
+  }
+
+  & form {
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+
+    & div {
+      background-color: $color-bg;
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      color: green;
+      border-bottom: 1px solid green;
+
+      & label {
+        width: 20%;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+
+      & input {
+        border: none;
+        margin-top: 5px;
+        padding: 10px 0;
+        font-size: 14px;
+        text-align: center;
+        width: 80%;
+        border: 0;
+        &:focus {
+          outline-width: 0;
+        }
+      }
+    }
+  }
+
+  & button {
+    background-color: green;
+    color: aquamarine;
+    font-size: 14px;
+    width: 98%;
+    padding: 20px 0;
+    border: none;
+    border-radius: 20%;
+  }
+
+  & footer {
+    display: flex;
+    color: green;
+    flex-direction: column;
+
+    & a {
+      color: green;
+      text-align: center;
+    }
+  }
+}
+
+.change-profile-info {
+  @mixin form-mixin change-profile-info;
+}
+
+.change-password {
+    @mixin form-mixin change-password;
+  }
+
+.sign-up {
+    @mixin form-mixin sign-up;
+  }
+
+  .sign-in {
+    @mixin form-mixin sign-in;
+  }
+
