@@ -42,17 +42,13 @@ change-profile-info page: https://deploy--grand-empanada-06da8f.netlify.app/chan
 change-password page: https://deploy--grand-empanada-06da8f.netlify.app/password
 
 404 page: https://deploy--grand-empanada-06da8f.netlify.app/404
-<<<<<<< HEAD
-=======
 
 500 page: https://deploy--grand-empanada-06da8f.netlify.app/500
->>>>>>> 6e82a8aa742d186031f8aaf606f31889aee86e20
 
 500 page: https://deploy--grand-empanada-06da8f.netlify.app/500
 
 **Pull requests**
-<<<<<<< HEAD
 
 Sprint 2: #2
 =======
->>>>>>> 6e82a8aa742d186031f8aaf606f31889aee86e20
+
