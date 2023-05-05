@@ -1,4 +1,12 @@
 {
+
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "sourceMap": true,
+        "strictNullChecks": true 
+       },
     "env": {
         "browser": true,
         "node": true,
@@ -21,6 +29,8 @@
     ],
     "rules": {
         "no-console": "off",
-        "eol-last": 0
+        "eol-last": 0,
+        "max-len": [2, 300],
+        "max-params": [2, 3]
     }
 }
