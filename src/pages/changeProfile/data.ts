@@ -4,7 +4,7 @@ export const data = {
     headerContent: "Change Profile Info",
   },
   avatarData: {
-    url: avatar1,
+    src: avatar1,
     class: "img1",
   },
   formData: {
@@ -15,6 +15,7 @@ export const data = {
         isLabel: true,
         label: "chat name",
         name: "display_name",
+        events: {},
       },
 
       {
@@ -23,6 +24,7 @@ export const data = {
         isLabel: true,
         label: "login",
         name: "login",
+        events: {},
       },
 
       {
@@ -31,6 +33,7 @@ export const data = {
         isLabel: true,
         label: "first name",
         name: "first_name",
+        events: {},
       },
       {
         placeholder: "last name",
@@ -38,6 +41,7 @@ export const data = {
         isLabel: true,
         label: "last name",
         name: "second_name",
+        events: {},
       },
       {
         placeholder: "e-mail",
@@ -45,6 +49,7 @@ export const data = {
         isLabel: true,
         label: "e-mail",
         name: "email",
+        events: {},
       },
       {
         placeholder: "phone number",
@@ -52,6 +57,7 @@ export const data = {
         isLabel: true,
         label: "phone",
         name: "phone",
+        events: {},
       }, 
     ],
   },

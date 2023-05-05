@@ -12,16 +12,26 @@ export const data = {
       {
         placeholder: "old password",
         type: "password",
+        isLabel: true,
+        label: "password",
+        name: "oldPassword",
+        events: {}
       },
-
       {
         placeholder: "new password",
         type: "password",
+        isLabel: true,
+        label: "password",
+        name: "newPassword",
+        events: {}
       },
-
       {
         placeholder: "repeat new password",
         type: "password",
+        isLabel: true,
+        label: "password",
+        name: "newPasswordAgain",
+        events: {}
       },
     ],
   },

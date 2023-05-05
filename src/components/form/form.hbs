@@ -2,9 +2,12 @@
     {{#each inputs}}
     <div>
     {{#if isLabel}}
-        <label>{{label}}</label>
+        <label tabindex="1">{{label}}</label>
     {{/if}}
-        <input name="{{name}}" placeholder = "{{placeholder}}" type="{{type}}" value="{{value}}" class="{{class}}" />
+        <input name="{{name}}" placeholder = "{{placeholder}}" 
+               type="{{type}}" value="{{value}}" class="{{class}}"
+               events="{{events}}" 
+        />
         </div>
     {{/each}}
 </form>

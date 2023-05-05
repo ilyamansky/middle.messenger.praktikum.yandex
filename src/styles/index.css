@@ -105,3 +105,8 @@ body {
     margin-top: 40px;
   }
 }
+
+.validate-error {
+  outline:5px solid red;
+  background-color: blue;
+}

@@ -1,4 +1,6 @@
+
 {{#if isChatSelected}}
+<div>
   {{#each messages}}
     {{#if isYourMessage}}
     <div class="chat-your-message">
@@ -19,3 +21,4 @@
 {{#else}}
     <div>{{chatMessage}}</div>
 {{/else}}
+</div>
