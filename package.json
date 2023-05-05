@@ -34,7 +34,6 @@
   "name": "messengerapp",
   "description": "**Описание**",
   "version": "1.0.0",
-  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ilyamansky/middle.messenger.praktikum.yandex.git"
