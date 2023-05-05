@@ -11,6 +11,7 @@ export const data = {
         isLabel: true,
         label: "login",
         name: "login",
+        events: {},
       },
 
       {
@@ -19,6 +20,7 @@ export const data = {
         isLabel: true,
         label: "password",
         name: "password",
+        events: {}
       },
     ],
   },
