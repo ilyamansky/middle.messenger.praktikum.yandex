@@ -29,7 +29,6 @@
     "server": "node server.js",
     "tsc": "tsc"
   },
-  "types": "./index.d.ts",
   "name": "messengerapp",
   "description": "**Описание**",
   "version": "1.0.0",
