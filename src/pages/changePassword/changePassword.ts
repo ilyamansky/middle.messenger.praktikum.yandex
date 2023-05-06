@@ -6,7 +6,7 @@ import Button from "../../components/button/button";
 import Block from "../../utils/Block";
 import { data } from "./data";
 import changePasswordTemplate from "./changePassword.hbs";
-import { onFocusin, onFocusout} from "../../utils/validate";
+import { onFocusin, onFocusout, onSubmit} from "../../utils/validate";
 import { RegularExpressions } from "../../utils/validate";
 
 const { password } = RegularExpressions; 
@@ -20,6 +20,12 @@ class ChangePassword extends Block {
     const button = new Button({
       buttonContent: data.buttonData.buttonContent,
       type: data.buttonData.type,
+
+      events: {
+        click: () => {
+          onSubmit()
+        }
+      }
     })
 
     const footer = new Footer({

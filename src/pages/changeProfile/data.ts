@@ -64,6 +64,7 @@ export const data = {
   buttonData: {
     buttonContent: "Save changes",
     type: "submit",
+    events: {},
   },
   footerData: {
     footerContent: "Go back to Profile",

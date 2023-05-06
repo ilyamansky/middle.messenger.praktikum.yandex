@@ -31,7 +31,7 @@ abstract class Block {
     eventBus.emit(Events.INIT);
   }
 
-  private _registerEvents(eventBus) {
+  private _registerEvents(eventBus: EventBus) {
     eventBus.on(Events.INIT, this.init.bind(this));
     eventBus.on(Events.FLOW_CDM, this._componentDidMount.bind(this));
     eventBus.on(Events.FLOW_CDU, this._componentDidUpdate.bind(this));
@@ -47,28 +47,28 @@ abstract class Block {
     this.eventBus().emit(Events.FLOW_RENDER);
   }
 
-  private _componentDidMount(oldProps: Props) {
-    this.componentDidMount(oldProps);
+  private _componentDidMount() {
+    this.componentDidMount();
     Object.values(this.children).forEach((child) => {
       child.dispatchComponentDidMount();
     });
   }
 
-  componentDidMount(oldProps: Props) {}
+  public componentDidMount() {}
 
   dispatchComponentDidMount() {
     this.eventBus().emit(Events.FLOW_CDM);
   }
 
-  private _componentDidUpdate(oldProps: Props, newProps: Props) {
-    const response = this.componentDidUpdate(oldProps, newProps);
+  private _componentDidUpdate() {
+    const response = this.componentDidUpdate();
     if (!response) {
       return;
     }
     this._render();
   }
 
-  componentDidUpdate(oldProps: Props, newProps: Props) {
+  public componentDidUpdate() {
     return true;
   }
 
@@ -133,8 +133,8 @@ abstract class Block {
     return proxyProps;
   }
 
-  private _createDocumentElement(tagName): HTMLElement {
-    const element = document.createElement(tagName) as HTMLElement;
+  private _createDocumentElement(tagName: string): HTMLElement {
+    const element = document.createElement(tagName);
     return element;
   }
 
@@ -163,8 +163,8 @@ abstract class Block {
   }
 
   private _getChildren(propsAndChildren: Props) {
-    const children = {};
-    const props = {};
+      const children: Record<string, Block> | any = {};
+      const props: Props = {};
 
     Object.entries(propsAndChildren).forEach(([key, value]) => {
       if (value instanceof Block) {
@@ -177,7 +177,7 @@ abstract class Block {
     return { children, props };
   }
 
-  protected compile(template: Function, props: Props) {
+  protected compile(template, props: Props) {
     const propsAndStubs = { ...props };
     Object.entries(this.children).forEach(([key, child]) => {
       propsAndStubs[key] = `<div data-id="${child.id}"></div>`;

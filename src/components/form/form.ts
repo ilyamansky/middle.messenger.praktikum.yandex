@@ -5,6 +5,7 @@ import Block from "../../utils/Block";
 
  type FormType = {
     inputs?: (InputsType)[] | null;
+    id?: string;
   }
    type InputsType = {
     placeholder?: string;
@@ -13,7 +14,7 @@ import Block from "../../utils/Block";
     label?: string;
     name?: string;
     class?: string;
-    events: any;
+    events?: {};
   }
       
 

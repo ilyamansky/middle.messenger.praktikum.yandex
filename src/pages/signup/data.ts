@@ -11,6 +11,7 @@ export const data = {
         isLabel: true,
         label: "first name",
         name: "first_name",
+        events: {},
       },
 
       {
@@ -19,6 +20,7 @@ export const data = {
         isLabel: true,
         label: "last name",
         name: "second_name",
+        events: {},
       },
 
       {
@@ -27,6 +29,7 @@ export const data = {
         isLabel: true,
         label: "e-mail",
         name: "email",
+        events: {},
       },
 
       {
@@ -35,6 +38,7 @@ export const data = {
         isLabel: true,
         label: "phone",
         name: "phone",
+        events: {},
       },
 
       {
@@ -43,6 +47,7 @@ export const data = {
         isLabel: true,
         label: "password",
         name: "password",
+        events: {},
       },
 
       {
@@ -51,17 +56,19 @@ export const data = {
         isLabel: true,
         label: "password",
         name: "password",
+        events: {},
       },
     ],
   },
   buttonData: {
     buttonContent: "Sign up",
     type: "submit",
+    events: {},
   },
   footerData: {
     footerContent: "Have a profile?",
     isFooter: true,
     linkUrl: "https://ya.ru",
     linkContent: "Sign In",
-  }
+  },
 };

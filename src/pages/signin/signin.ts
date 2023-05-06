@@ -5,7 +5,7 @@ import Form from "../../components/form/form";
 import signinTemplate from "./signin.hbs";
 import { data } from "./data";
 import Block from "../../utils/Block";
-import { onFocusin, onFocusout } from "../../utils/validate";
+import { onFocusin, onFocusout, onSubmit } from "../../utils/validate";
 import { RegularExpressions} from"../../utils/validate";
 
 const { login, password } = RegularExpressions;
@@ -17,11 +17,7 @@ class SignIn extends Block {
       headerContent: data.headerData.headerContent,
     });
 
-    const button = new Button({
-      buttonContent: data.buttonData.buttonContent,
-      type: data.buttonData.type,
-    })
-
+    
     const footer = new Footer({
       footerContent: data.footerData.footerContent,
       isFooter: data.footerData.isFooter,
@@ -35,6 +31,7 @@ class SignIn extends Block {
       name: data.formData.inputs[0].name,
       placeholder: data.formData.inputs[0].placeholder,
       type: data.formData.inputs[0].type,
+      class: data.formData.inputs[0].class,
 
      events: {
       focusin: (event: Event) => {
@@ -50,9 +47,21 @@ class SignIn extends Block {
         if(targetName === "password") {
           onFocusout(event, password)
         }
-      }
+      },
      }
+    });
+
+    const button = new Button({
+      buttonContent: data.buttonData.buttonContent,
+      type: data.buttonData.type,
+      
+      events: {
+        click: () => {
+          onSubmit()
+        }
+      }
     })
+
 
     super("div", { ...props, header, button, footer, form });
   }

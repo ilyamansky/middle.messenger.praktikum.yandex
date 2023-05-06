@@ -8,7 +8,6 @@ import ChangePassword from "./pages/changePassword/changePassword";
 import "./styles/index.css";
 import { renderDOM }  from './utils/renderDom';
 
-const root1 = document.querySelector('#root');
 const path = window.location.pathname;
 
 switch (path) {

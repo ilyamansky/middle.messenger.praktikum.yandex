@@ -6,7 +6,7 @@ import Block from "../../utils/Block";
 import changeProfileTemplate from './changeProfile.hbs'
 import Avatar from "../../components/avatar/avatar";
 import { data } from "./data";
-import { onFocusin, onFocusout} from "../../utils/validate";
+import { onFocusin, onFocusout, onSubmit} from "../../utils/validate";
 import { RegularExpressions } from "../../utils/validate";
 
 const { first_name, label_name, second_name, login, email, phone } = RegularExpressions;
@@ -25,6 +25,12 @@ class ChangeProfile extends Block {
     const button = new Button({
       buttonContent: data.buttonData.buttonContent,
       type: data.buttonData.type,
+
+      events: {
+        click: () => {
+          onSubmit()
+        }
+      }
     })
 
     const footer = new Footer({

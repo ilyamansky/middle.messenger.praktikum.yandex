@@ -9,22 +9,35 @@ export const RegularExpressions: Record<string, RegExp> = {
   password: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,40}$/,
 };
 
-
 export function validate(value: string, regEx: RegExp) {
-     return !regEx.test(value)
+  return !regEx.test(value);
 }
 
-export function onFocusin (event: Event) {
-    let element = event.target?.name;
-      let el = document.querySelector(`[name=${CSS.escape(element)}]`);
-      el?.classList.remove('validate-error')
-  }
+export function onFocusin(event: Event) {
+  let element = event.target?.name;
+  let el = document.querySelector(`[name=${CSS.escape(element)}]`);
+  el?.classList.remove("validate-error");
+}
 
-  export function onFocusout(event: Event, regEx) {
-    let value = event.target?.value;
-    let element = event.target?.name;
-    if(validate(value, regEx)) {
-      let el = document.querySelector(`[name=${CSS.escape(element)}]`);
-      el?.classList.add('validate-error');
-    };
+export function onFocusout(event: Event, regEx) {
+  let value = event.target?.value;
+  let element = event.target?.name;
+  if (validate(value, regEx)) {
+    let el = document.querySelector(`[name=${CSS.escape(element)}]`);
+    el?.classList.add("validate-error");
   }
+}
+
+export function onSubmit() {
+  const inputs = document.querySelectorAll("input");
+  const verifiedForm = {};
+  for (let input of inputs) {
+    if (!input.value || input.className === "validate-error") {
+      alert("Заполните форму правильно!");
+      break;
+    } else {
+    let key = input.name;
+    verifiedForm[key] = input.value;
+  }};
+  console.log(verifiedForm); 
+}

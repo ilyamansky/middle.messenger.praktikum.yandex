@@ -11,6 +11,7 @@ export const data = {
         isLabel: true,
         label: "login",
         name: "login",
+        class:"",
         events: {},
       },
 
@@ -27,6 +28,7 @@ export const data = {
   buttonData: {
     buttonContent: "Sign In",
     type: "submit",
+    events: {}
   },
   footerData: {
     footerContent: "Don't have a profile?",
