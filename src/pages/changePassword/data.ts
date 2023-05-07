@@ -30,7 +30,7 @@ export const data = {
         type: "password",
         isLabel: true,
         label: "password",
-        name: "newPasswordAgain",
+        name: "newPassword",
         events: {}
       },
     ],

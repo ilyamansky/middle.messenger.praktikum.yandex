@@ -11,7 +11,6 @@ export const data = {
         isLabel: true,
         label: "login",
         name: "login",
-        class:"",
         events: {},
       },
 

@@ -7,10 +7,8 @@ import { data } from "./data";
 import Block from "../../utils/Block";
 import { onFocusin, onFocusout, onSubmit } from "../../utils/validate";
 
-import { RegularExpressions } from "../../utils/validate";
-
-const { first_name, second_name, password, email, phone } = RegularExpressions;
-
+import { FormValidationData } from "../../utils/validate";
+const {formData} = FormValidationData;
 
 class SignUp extends Block {
   constructor(props: Record<string, any> = {}) {
@@ -23,8 +21,8 @@ class SignUp extends Block {
       type: data.buttonData.type,
 
       events: {
-        click: () => {
-          onSubmit()
+        click: (event: Event) => {
+          onSubmit(event, formData)
         }
       }
     })
@@ -45,32 +43,13 @@ class SignUp extends Block {
 
       events: {
         focusin: (event: Event) => {
-          onFocusin(event)
-        },
-        focusout: (event: Event) => {
-          let targetName = event.target?.name;
-  
-          if(targetName === "email") {
-            onFocusout(event, email)
-          };
-  
-          if(targetName === "first_name") {
-            onFocusout(event, first_name)
-          };
-  
-          if(targetName === "second_name") {
-            onFocusout(event, second_name)
-          };
-  
-          if(targetName === "password") {
-            onFocusout(event, password)
-          };
-  
-          if(targetName === "phone") {
-            onFocusout(event, phone)
-          };
-        }
-       }
+        onFocusin(event)
+      },
+      focusout: (event: Event) => {
+        const targetName  = event.target?.name;
+        onFocusout(event, formData[targetName].regEx, formData[targetName].errorMessage)
+      },
+     }
     })
 
     super("div", { ...props, header, button, footer, form });

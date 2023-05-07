@@ -14,8 +14,9 @@ import Block from "../../utils/Block";
     label?: string;
     name?: string;
     class?: string;
-    events?: {};
+    events?: object;
   }
+  
       
 
 class Form extends Block {

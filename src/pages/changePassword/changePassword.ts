@@ -7,9 +7,9 @@ import Block from "../../utils/Block";
 import { data } from "./data";
 import changePasswordTemplate from "./changePassword.hbs";
 import { onFocusin, onFocusout, onSubmit} from "../../utils/validate";
-import { RegularExpressions } from "../../utils/validate";
 
-const { password } = RegularExpressions; 
+import { FormValidationData } from "../../utils/validate";
+const {formData} = FormValidationData;
 
 class ChangePassword extends Block {
   constructor(props: Record<string, any> = {}) {
@@ -22,8 +22,8 @@ class ChangePassword extends Block {
       type: data.buttonData.type,
 
       events: {
-        click: () => {
-          onSubmit()
+        click: (event: Event) => {
+          onSubmit(event, formData)
         }
       }
     })
@@ -52,8 +52,9 @@ class ChangePassword extends Block {
         onFocusin(event)
       },
       focusout: (event: Event) => {
-          onFocusout(event, password)
-      }
+        const targetName  = event.target?.name;
+        onFocusout(event, formData[targetName].regEx, formData[targetName].errorMessage)
+      },
      }
     })
 

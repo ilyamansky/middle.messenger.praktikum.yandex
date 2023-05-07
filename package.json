@@ -28,7 +28,9 @@
     "start": "parcel static/index.html -p 3000",
     "build": "parcel build static/index.html",
     "server": "node server.js",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "lint": "eslint . --fix",
+    "stylelint": "stylelint --fix **/*.{css}"
   },
   "name": "messengerapp",
   "description": "**Описание**",

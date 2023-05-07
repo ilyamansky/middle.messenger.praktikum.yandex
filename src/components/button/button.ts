@@ -9,7 +9,7 @@ type ButtonProps = {
   type: string;
   buttonContent: string;
   form?: string,
-  events?: {}
+  events?: object,
 }
 
 class Button extends Block {

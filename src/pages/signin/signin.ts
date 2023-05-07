@@ -6,10 +6,8 @@ import signinTemplate from "./signin.hbs";
 import { data } from "./data";
 import Block from "../../utils/Block";
 import { onFocusin, onFocusout, onSubmit } from "../../utils/validate";
-import { RegularExpressions} from"../../utils/validate";
-
-const { login, password } = RegularExpressions;
-
+import { FormValidationData } from "../../utils/validate";
+const {formData} = FormValidationData;
 
 class SignIn extends Block {
   constructor(props: Record<string, any> = {}) {
@@ -30,23 +28,15 @@ class SignIn extends Block {
       isLabel: data.formData.inputs[0].isLabel,
       name: data.formData.inputs[0].name,
       placeholder: data.formData.inputs[0].placeholder,
-      type: data.formData.inputs[0].type,
-      class: data.formData.inputs[0].class,
+      type: data.formData.inputs[0].type, 
 
      events: {
       focusin: (event: Event) => {
         onFocusin(event)
       },
       focusout: (event: Event) => {
-        let targetName = event.target?.name;
-
-        if(targetName === "login") {
-          onFocusout(event, login)
-        };
-
-        if(targetName === "password") {
-          onFocusout(event, password)
-        }
+        const targetName  = event.target?.name;
+        onFocusout(event, formData[targetName].regEx, formData[targetName].errorMessage)
       },
      }
     });
@@ -56,8 +46,8 @@ class SignIn extends Block {
       type: data.buttonData.type,
       
       events: {
-        click: () => {
-          onSubmit()
+        click: (event: Event) => {
+          onSubmit(event, formData)
         }
       }
     })
