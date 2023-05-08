@@ -5,11 +5,9 @@ import Form from "../../components/form/form";
 import signinTemplate from "./signin.hbs";
 import { data } from "./data";
 import Block from "../../utils/Block";
-import { onFocusin, onFocusout } from "../../utils/validate";
-import { RegularExpressions} from"../../utils/validate";
-
-const { login, password } = RegularExpressions;
-
+import { onFocusin, onFocusout, onSubmit } from "../../utils/validate";
+import { FormValidationData } from "../../utils/validate";
+const {formData} = FormValidationData;
 
 class SignIn extends Block {
   constructor(props: Record<string, any> = {}) {
@@ -17,11 +15,7 @@ class SignIn extends Block {
       headerContent: data.headerData.headerContent,
     });
 
-    const button = new Button({
-      buttonContent: data.buttonData.buttonContent,
-      type: data.buttonData.type,
-    })
-
+    
     const footer = new Footer({
       footerContent: data.footerData.footerContent,
       isFooter: data.footerData.isFooter,
@@ -34,25 +28,30 @@ class SignIn extends Block {
       isLabel: data.formData.inputs[0].isLabel,
       name: data.formData.inputs[0].name,
       placeholder: data.formData.inputs[0].placeholder,
-      type: data.formData.inputs[0].type,
+      type: data.formData.inputs[0].type, 
 
      events: {
       focusin: (event: Event) => {
         onFocusin(event)
       },
       focusout: (event: Event) => {
-        let targetName = event.target?.name;
+        const targetName  = event.target?.name;
+        onFocusout(event, formData[targetName].regEx, formData[targetName].errorMessage)
+      },
+     }
+    });
 
-        if(targetName === "login") {
-          onFocusout(event, login)
-        };
-
-        if(targetName === "password") {
-          onFocusout(event, password)
+    const button = new Button({
+      buttonContent: data.buttonData.buttonContent,
+      type: data.buttonData.type,
+      
+      events: {
+        click: (event: Event) => {
+          onSubmit(event, formData)
         }
       }
-     }
     })
+
 
     super("div", { ...props, header, button, footer, form });
   }

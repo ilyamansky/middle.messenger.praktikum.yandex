@@ -15,8 +15,6 @@ class Chats extends Block {
 
     const form = new Form({
       inputs: data.formData.inputs,
-      isLabel: data.formData.inputs[0].isLabel,
-      name: data.formData.inputs[0].name,
       placeholder: data.formData.inputs[0].placeholder,
       type: data.formData.inputs[0].type,
     })
@@ -40,8 +38,6 @@ class Chats extends Block {
 
     const form2 = new Form({
       inputs: data.formContent.inputs,
-      isLabel: data.formContent.inputs[0].isLabel,
-      name: data.formContent.inputs[0].name,
       placeholder: data.formContent.inputs[0].placeholder,
       type: data.formContent.inputs[0].type,
 

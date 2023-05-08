@@ -30,13 +30,15 @@ export const data = {
         type: "password",
         isLabel: true,
         label: "password",
-        name: "newPasswordAgain",
+        name: "newPassword",
         events: {}
       },
     ],
   },
   buttonData: {
     buttonContent: "Save changes",
+    type: "Submit",
+    events: {},
   },
   footerData: {
     footerContent: "Go back to Profile",

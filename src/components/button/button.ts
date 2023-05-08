@@ -8,6 +8,8 @@ type ButtonProps = {
   class?: string;
   type: string;
   buttonContent: string;
+  form?: string,
+  events?: object,
 }
 
 class Button extends Block {

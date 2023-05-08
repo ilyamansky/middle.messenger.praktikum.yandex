@@ -6,10 +6,10 @@ import Block from "../../utils/Block";
 import changeProfileTemplate from './changeProfile.hbs'
 import Avatar from "../../components/avatar/avatar";
 import { data } from "./data";
-import { onFocusin, onFocusout} from "../../utils/validate";
-import { RegularExpressions } from "../../utils/validate";
+import { onFocusin, onFocusout, onSubmit} from "../../utils/validate";
 
-const { first_name, label_name, second_name, login, email, phone } = RegularExpressions;
+import { FormValidationData } from "../../utils/validate";
+const {formData} = FormValidationData;
 
 class ChangeProfile extends Block {
   constructor(props: Record<string, any> = {}) {
@@ -25,6 +25,12 @@ class ChangeProfile extends Block {
     const button = new Button({
       buttonContent: data.buttonData.buttonContent,
       type: data.buttonData.type,
+
+      events: {
+        click: (event: Event) => {
+          onSubmit(event, formData)
+        }
+      }
     })
 
     const footer = new Footer({
@@ -46,32 +52,9 @@ class ChangeProfile extends Block {
         onFocusin(event)
       },
       focusout: (event: Event) => {
-        let targetName = event.target?.name;
-
-        if(targetName === "login") {
-          onFocusout(event, login)
-        };
-
-        if(targetName === "email") {
-          onFocusout(event, email)
-        };
-
-        if(targetName === "first_name") {
-          onFocusout(event, first_name)
-        };
-
-        if(targetName === "second_name") {
-          onFocusout(event, second_name)
-        };
-
-        if(targetName === "display_name") {
-          onFocusout(event, label_name)
-        };
-
-        if(targetName === "phone") {
-          onFocusout(event, phone)
-        };
-      }
+        const targetName  = event.target?.name;
+        onFocusout(event, formData[targetName].regEx, formData[targetName].errorMessage)
+      },
      }
     })
 

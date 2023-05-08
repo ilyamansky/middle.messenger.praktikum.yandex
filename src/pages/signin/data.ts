@@ -27,6 +27,7 @@ export const data = {
   buttonData: {
     buttonContent: "Sign In",
     type: "submit",
+    events: {}
   },
   footerData: {
     footerContent: "Don't have a profile?",

@@ -1,4 +1,4 @@
-<form>
+<form id = "{{id}}">
     {{#each inputs}}
     <div>
     {{#if isLabel}}
@@ -8,6 +8,7 @@
                type="{{type}}" value="{{value}}" class="{{class}}"
                events="{{events}}" 
         />
+        <div class="hide-error-message"></div>
         </div>
     {{/each}}
 </form>
