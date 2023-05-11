@@ -2,8 +2,12 @@ export const data = {
   headerData: {
     headerContent: "Sign In",
   },
-
+  
   formData: {
+    buttonData: {
+      buttonContent: "Sign In",
+      type: "submit",
+    },
     inputs: [
       {
         placeholder: "login",
@@ -23,11 +27,6 @@ export const data = {
         events: {}
       },
     ],
-  },
-  buttonData: {
-    buttonContent: "Sign In",
-    type: "submit",
-    events: {}
   },
   footerData: {
     footerContent: "Don't have a profile?",

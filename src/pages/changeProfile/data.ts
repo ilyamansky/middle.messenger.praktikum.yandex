@@ -8,6 +8,10 @@ export const data = {
     class: "img1",
   },
   formData: {
+    buttonData: {
+      buttonContent: "Save changes",
+      type: "submit",
+    },
     inputs: [
       {
         placeholder: "chat name",
@@ -60,11 +64,6 @@ export const data = {
         events: {},
       }, 
     ],
-  },
-  buttonData: {
-    buttonContent: "Save changes",
-    type: "submit",
-    events: {},
   },
   footerData: {
     footerContent: "Go back to Profile",

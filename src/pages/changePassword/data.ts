@@ -1,13 +1,17 @@
-import avatar1 from "../../../static/assets/images/avatar1.jpg";
+import avatar2 from "../../../static/assets/images/avatar2.jpg";
 export const data = {
   headerData: {
     headerContent: "Change Password",
   },
   avatarData: {
-    url: avatar1,
+    avatarUrl: avatar2,
     class: "img1",
   },
   formData: {
+    buttonData: {
+      buttonContent: "Save changes",
+      type: "Submit",
+    },
     inputs: [
       {
         placeholder: "old password",
@@ -34,11 +38,6 @@ export const data = {
         events: {}
       },
     ],
-  },
-  buttonData: {
-    buttonContent: "Save changes",
-    type: "Submit",
-    events: {},
   },
   footerData: {
     footerContent: "Go back to Profile",

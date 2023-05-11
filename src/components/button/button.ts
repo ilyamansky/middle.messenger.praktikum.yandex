@@ -6,9 +6,8 @@ import Block from "../../utils/Block";
 
 type ButtonProps = {
   class?: string;
-  type: string;
-  buttonContent: string;
-  form?: string,
+  type?: string;
+  buttonContent?: string;
   events?: object,
 }
 
