@@ -13,6 +13,7 @@ type CardsEntityType = {
     lastMessage: string;
     isUnreadMessage?: boolean | null;
     count?: string | null;
+    alt?: string
 }
   
 class Card extends Block {

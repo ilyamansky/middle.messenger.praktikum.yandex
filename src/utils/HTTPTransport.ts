@@ -6,11 +6,13 @@ const METHODS = {
 };
 
 type Options = {
-  method: string
+  method?: string
   headers?: Record<string, string>
   data?: Record<string, any>
   timeout?: number
 };
+
+type HTTPMethod = (url: string, options?: Options) => Promise<unknown>
 
 
 function queryStringify(data: Record<string, any>) {
@@ -24,7 +26,7 @@ function queryStringify(data: Record<string, any>) {
 }
 
 class HTTPTransport {
-  get = (url: string, options: Options) => {
+  get: HTTPMethod = (url, options = {}) => {
     return this.request(
       url,
       { ...options, method: METHODS.GET },
@@ -32,7 +34,7 @@ class HTTPTransport {
     );
   };
 
-  post = (url: string, options: Options) => {
+  post: HTTPMethod = (url, options = {}) => {
     return this.request(
       url,
       { ...options, method: METHODS.POST },
@@ -40,7 +42,7 @@ class HTTPTransport {
     );
   };
 
-  put = (url: string, options: Options) => {
+  put: HTTPMethod = (url, options = {}) => {
     return this.request(
       url,
       { ...options, method: METHODS.PUT },
@@ -48,7 +50,7 @@ class HTTPTransport {
     );
   };
 
-  delete = (url: string, options: Options) => {
+  delete: HTTPMethod = (url, options = {}) => {
     return this.request(
       url,
       { ...options, method: METHODS.DELETE },

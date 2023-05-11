@@ -5,8 +5,8 @@ Handlebars.registerPartial('avatar', avatarTemplate);
 import Block from '../../utils/Block';
 
 type AvatarProps = {
-    class: string,
-    src: string,
+    class?: string,
+    src?: string,
   }
   
   class Avatar extends Block {

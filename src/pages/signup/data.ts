@@ -4,6 +4,10 @@ export const data = {
   },
 
   formData: {
+    buttonData: {
+      buttonContent: "Sign In",
+      type: "submit",
+    },
     inputs: [
       {
         placeholder: "first name",
@@ -59,11 +63,6 @@ export const data = {
         events: {},
       },
     ],
-  },
-  buttonData: {
-    buttonContent: "Sign up",
-    type: "submit",
-    events: {},
   },
   footerData: {
     footerContent: "Have a profile?",

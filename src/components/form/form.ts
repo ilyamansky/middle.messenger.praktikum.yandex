@@ -4,8 +4,12 @@ import formTemplate from './form.hbs';
 import Block from "../../utils/Block";
 
  type FormType = {
-    inputs?: (InputsType)[] | null;
-    id?: string;
+    inputs: (InputsType)[] | null;
+    button: ButtonType;
+  }
+  type ButtonType = {
+    buttonType: string,
+    buttonContent: string
   }
    type InputsType = {
     placeholder?: string;
@@ -20,7 +24,7 @@ import Block from "../../utils/Block";
       
 
 class Form extends Block {
-  constructor(props: FormType | InputsType) {
+  constructor(props: FormType | InputsType | ButtonType) {
     super("div", props);
   }
 

@@ -2,7 +2,6 @@ import Header from "../../components/header/header";
 import Avatar from "../../components/avatar/avatar";
 import Form from "../../components/form/form";
 import Footer from "../../components/footer/footer";
-import Button from "../../components/button/button";
 import Block from "../../utils/Block";
 import { data } from "./data";
 import changePasswordTemplate from "./changePassword.hbs";
@@ -17,17 +16,6 @@ class ChangePassword extends Block {
       headerContent: data.headerData.headerContent,
     });
 
-    const button = new Button({
-      buttonContent: data.buttonData.buttonContent,
-      type: data.buttonData.type,
-
-      events: {
-        click: (event: Event) => {
-          onSubmit(event, formData)
-        }
-      }
-    })
-
     const footer = new Footer({
       footerContent: data.footerData.footerContent,
       isFooter: data.footerData.isFooter,
@@ -37,28 +25,37 @@ class ChangePassword extends Block {
 
     const avatar = new Avatar({
       class: data.avatarData.class,
-      src: data.avatarData.url,
+      src: data.avatarData.avatarUrl,
     });
 
     const form = new Form({
+      buttonContent: data.formData.buttonData.buttonContent,
+      buttonType: data.formData.buttonData.type,
+
       inputs: data.formData.inputs,
       isLabel: data.formData.inputs[0].isLabel,
       name: data.formData.inputs[0].name,
       placeholder: data.formData.inputs[0].placeholder,
       type: data.formData.inputs[0].type,
 
-     events: {
-      focusin: (event: Event) => {
-        onFocusin(event)
-      },
-      focusout: (event: Event) => {
-        const targetName  = event.target?.name;
-        onFocusout(event, formData[targetName].regEx, formData[targetName].errorMessage)
-      },
-     }
-    })
+      events: {
+        focusin: (event: Event) => {
+          if (event.target?.type === "submit") return;
+          onFocusin(event);
+        },
+        focusout: (event: Event) => {
+          if (event.target?.type === "submit") return;
+          const targetName  = event.target?.name;
+          onFocusout(event, formData[targetName]?.regEx, formData[targetName]?.errorMessage)
+        },
+        submit: (event: Event) => {
+          event.preventDefault();
+          onSubmit(event, formData);
+        } 
+       }
+      });
 
-    super("div", { ...props, header, button, footer, form, avatar });
+    super("div", { ...props, header, footer, form, avatar });
   }
   
 

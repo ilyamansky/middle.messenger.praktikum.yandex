@@ -1,6 +1,5 @@
 import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
-import Button from "../../components/button/button";
 import Form from "../../components/form/form";
 import signinTemplate from "./signin.hbs";
 import { data } from "./data";
@@ -24,6 +23,9 @@ class SignIn extends Block {
     });
 
     const form = new Form({
+      buttonContent: data.formData.buttonData.buttonContent,
+      buttonType: data.formData.buttonData.type,
+
       inputs: data.formData.inputs,
       isLabel: data.formData.inputs[0].isLabel,
       name: data.formData.inputs[0].name,
@@ -32,28 +34,22 @@ class SignIn extends Block {
 
      events: {
       focusin: (event: Event) => {
-        onFocusin(event)
+        if (event.target?.type === "submit") return;
+        onFocusin(event);
       },
       focusout: (event: Event) => {
+        if (event.target?.type === "submit") return;
         const targetName  = event.target?.name;
-        onFocusout(event, formData[targetName].regEx, formData[targetName].errorMessage)
+        onFocusout(event, formData[targetName]?.regEx, formData[targetName]?.errorMessage)
       },
+      submit: (event: Event) => {
+        event.preventDefault();
+        onSubmit(event, formData);
+      } 
      }
     });
 
-    const button = new Button({
-      buttonContent: data.buttonData.buttonContent,
-      type: data.buttonData.type,
-      
-      events: {
-        click: (event: Event) => {
-          onSubmit(event, formData)
-        }
-      }
-    })
-
-
-    super("div", { ...props, header, button, footer, form });
+    super("div", { ...props, header, footer, form });
   }
   
 

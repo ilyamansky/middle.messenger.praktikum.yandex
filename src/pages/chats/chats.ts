@@ -25,7 +25,7 @@ class Chats extends Block {
         avatarUrl: data.cardData.cards[0].avatarUrl,
         lastMessage: data.cardData.cards[0].lastMessage,
         isUnreadMessage: data.cardData.cards[0].isUnreadMessage,
-        count: data.cardData.cards[0].count,
+        count: data.cardData.cards[0].count, 
     })
 
     const chatContent = new ChatContent({
