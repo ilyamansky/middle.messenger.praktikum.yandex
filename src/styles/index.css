@@ -105,3 +105,20 @@ body {
     margin-top: 40px;
   }
 }
+
+.validate-error {
+  color: red !important;
+}
+
+.hide-error-message {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.show-error-message {
+  display: block;
+  text-align: center;
+  color: red !important;
+  background-color: beige !important;
+}

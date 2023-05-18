@@ -4,7 +4,14 @@
     {{#if isLabel}}
         <label>{{label}}</label>
     {{/if}}
-        <input name="{{name}}" placeholder = "{{placeholder}}" type="{{type}}" value="{{value}}" class="{{class}}" />
-        </div>
+        <input name="{{name}}" placeholder = "{{placeholder}}" 
+               type="{{type}}" value="{{value}}" class="{{class}}"
+               events="{{events}}" 
+        />
+        <div class="hide-error-message"></div>
+    </div>
     {{/each}}
+    <button type = "{{type}}">
+        {{{buttonContent}}}
+    </button>
 </form>

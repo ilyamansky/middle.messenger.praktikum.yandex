@@ -1,0 +1,8 @@
+{
+    "rules": {
+        "color-hex-case": "upper",
+        "no-missing-end-of-source-newline": false,
+        "no-empty-source": null
+    },
+    "ignoreFiles": ["dist/*", "node_modules/*", "/.git/", "/.parcel-cache/"]
+}

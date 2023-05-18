@@ -1,5 +1,5 @@
 export const data = {
-    errorContext: {
+    errorData: {
         errorTitle: '500',
         errorMessage: 'We are fixing it',
 
